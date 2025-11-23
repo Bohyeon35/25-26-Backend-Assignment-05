@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/Memos")
+@RequestMapping("/memos")
 public class MemoController {
 
     private final MemoService memoService;
@@ -45,7 +45,7 @@ public class MemoController {
     @DeleteMapping("/{memoId}")
     public ResponseEntity<MemoResponseDto> deleteMemo(@PathVariable Long memoId) {
         memoService.deleteMemo(memoId);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping
